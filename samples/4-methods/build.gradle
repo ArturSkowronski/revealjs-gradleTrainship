@@ -1,0 +1,9 @@
+File[] fileList(String dir) {
+    file(dir).listFiles({file -> file.isFile() } as FileFilter).sort()
+}
+
+task loadFile << {
+    fileList('testFiles').each {File file ->
+        println "I'm $file.name"
+    }
+}

@@ -1,0 +1,23 @@
+Closure cl = { task -> println "I'm $task.project.name" }
+
+task hello << cl
+
+project(':childProject') {
+    task hello << cl
+}
+
+allprojects {
+    task helloAll << { task -> println "I'm $task.project.name" }
+}
+
+subprojects {
+    helloAll << {println "- I am child"}
+}
+
+task parentTask<<{
+	println "I'm in parent context" 
+}
+
+task inception(dependsOn: ':childProject:childTask')<<{
+	println "I'm in parent context depending on child context depending on parent context... we need to go deeper" 
+}

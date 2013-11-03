@@ -1,0 +1,34 @@
+defaultTasks 'ourDefaultTask'
+
+task ourDefaultTask << {
+    println 'I always run first!'
+}
+
+
+task parentTask << {
+    println "I'm task parent"
+}
+
+task ourTask(dependsOn: parentTask) << {
+    println "I'm task"
+}
+
+4.times { 
+	counter ->
+    	task "task$counter" << {
+        	println "I'm task $counter"
+    }
+}
+
+task newTask(dependsOn: task2) << {
+	println "I dependOn dynamic tasks!"
+}
+
+task0.dependsOn task2, task3 << {
+	println "I dependOn dynamic tasks and I'm dynamic task too!"
+}
+
+task0 << {
+	println "End of magic"
+}
+

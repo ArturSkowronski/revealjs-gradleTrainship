@@ -1,0 +1,17 @@
+task hello {
+    doLast {
+        println 'Do it after'
+    }
+    doFirst {
+    	println 'Do it before both doLast'
+	}
+	doLast {
+        println 'Do it last'
+    }
+	  println 'Do it first'
+}
+
+task hello2 << {
+    println 'Hello world with shortcut!'
+}
+

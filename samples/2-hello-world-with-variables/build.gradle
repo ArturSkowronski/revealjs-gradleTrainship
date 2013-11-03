@@ -1,0 +1,20 @@
+task helloVar{
+	    ext.someExternalString = "External Variable"
+	    }
+
+helloVar << {
+    String someString = 'Local Variable'
+    println "Original: " + someString 
+    println "Upper case: " + someString.toUpperCase()
+    println "Lower case: " + someString.toLowerCase()
+}
+
+
+task helloExtVar << {
+ println helloVar.someExternalString
+}
+
+task helloLoop << {
+String someString = 'Local Variable'
+ 4.times { println "someString $it time" }
+}

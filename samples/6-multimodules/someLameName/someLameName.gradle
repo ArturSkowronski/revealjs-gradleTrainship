@@ -1,0 +1,3 @@
+task mindblow(dependsOn: ':parentTask')<<{
+	println "We depend on task which is in parallel location to us... pufff" 
+}

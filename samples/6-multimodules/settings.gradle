@@ -1,0 +1,8 @@
+include ':childProject',':childProject2'
+
+project(':childProject2').projectDir = new File(settingsDir, '/someLameName')
+project(':childProject2').buildFileName = 'someLameName.gradle'
+
+println rootProject.name
+println project(':childProject').name
+println project(':childProject2').name

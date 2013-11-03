@@ -1,0 +1,13 @@
+println 'The configuration phase...'
+
+task configure {
+	println 'The configuration phase of task configure...'
+}
+
+task execute {
+	println 'The configuration phase of task execute...'
+}
+
+execute << {
+  	println 'The execution phase !!...'
+}
