@@ -1,7 +1,6 @@
 #Gradle
 ###Build Tool for Java
-Created by [Artur Skowronski](http://hibari.eu) /
-[@ArturSkowronski](http://twitter.com/ArturSkowronski)
+
 
 ##Heads Up
 Gradle is a flexible general purpose build tool like Ant, with build-by-convention Maven style. 
@@ -72,6 +71,4 @@ it generate valid maven structure..
 	gradle setupBuild --type pom
 to create maven project
 
-<h1>THE END</h1>
-<h3>Artur Skowronski</h3>
 
